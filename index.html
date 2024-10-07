@@ -1,21 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Lesson 4</title>
-    <meta charset="UTF-8"/>
-
-    <script src="src/index.js" type="module"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дифференцирование полиномов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        input {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+    <script type="module" src="./src/index.js"></script>
 </head>
-
 <body>
-<h1>Implement the symbolic diff here</h1>
-<div id="container">
 
-</div>
-<div>
-    <button id="demoButton">
-        Add something
-    </button>
-</div>
+    <h1>Дифференцирование полиномов</h1>
+    <input type="text" id="polynomial" placeholder="Введите полином (например, 4*x^3 - x^2 + 2*y^2)">
+    <input type="text" id="variable" placeholder="Введите переменную (x или y)">
+    <button id="diffButton">Дифференцировать</button>
+    <div class="result" id="result"></div>
 </body>
 </html>

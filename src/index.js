@@ -1,14 +1,21 @@
+import {MiniMaple} from "../src/miniMaple.js";
 document.addEventListener('DOMContentLoaded',setup)
 
 function setup() {
-    document.getElementById('demoButton').onclick = addSomething;
+    document.getElementById('diffButton').onclick = addSomething;
 }
 
 function addSomething(){
-    const someDummyDiv = document.createElement('div');
-    someDummyDiv.classList.add('generated');
-    const count = document.getElementsByClassName('generated').length;
-    someDummyDiv.innerHTML = `I was created by JS! There are already ${count} of my friends!`;
-    const container = document.getElementById('container');
-    container.appendChild(someDummyDiv);
+    const polynomial = document.getElementById('polynomial').value;
+    const variable = document.getElementById('variable').value;
+    const resultDiv = document.getElementById('result');
+
+    const miniMaple = new MiniMaple();
+    try {
+        const result = miniMaple.diff(polynomial, variable);
+        resultDiv.textContent = `Результат: ${result}`;
+    } catch (error) {
+        resultDiv.textContent = `Ошибка: ${error.message}`;
+    }
+    
 }
